@@ -1,7 +1,32 @@
 import tkinter as tk
 from tkinter import messagebox
 
+Igbo_dict ={
+    'bia' : 'come >> To move towards a person, place or point in space.' ,
+    'anu' : 'meat >> The flesh of animals used as food.' ,
+    'oyi' : 'cold >> A condition or sensation of temperature.' ,
+    'iko' : 'cup >> A small, bowl-shaped container used to hold liquids like water, tea excetera.' ,
+    'mmiri' : 'water >> A transparent, tasteless liquid essential for all forms of life, covering most of the earths surface.' ,
+    'ntutu' : 'hair >> The fine thread-like strands growing on the head or body of humans and animals. ' ,
+    'chi' : 'God >> A supreme being or deity worshiped as the creator and ruler of the universe in spiritual beliefs.' ,
+    'kedu' : 'How are you >> A common Igbo greeting used to inquire about someones well-being.' ,
+    'Ulo' : 'house >> A building for human habitation, typically with rooms and a roof.' ,
+    'Ego' : 'money >> A medium of exchange in form of coins, banknotes, or digital currency.' ,
+    'Akpu' : 'cassava fufu >> A starchy food made from cassava tubers, commonly eaten in West Africa.' ,
+    'ututu' : 'morning >> The early part of the day, typically before noon.' ,
+    'ahu' : 'body >> The physical structure of a living being, including flesh, bones, and organs. ' ,
+    'obi' : 'heart/soul/mind >> The central organ of circulation; also refers to emotions, intellect, or essence of a person.' ,
+    'ike' : 'strength/power >> The quality or state of being physically or mentally strong; ability to exert force or influence.' ,
+    'udo' : 'peace >> A state of tranqulity, abesence of conflict or war.' ,
+    'aka' : 'hand >> A vital part of the human body attached to the wrist, used for holding and manipulating objects. ' ,
+    'oru' : 'work >> Physical or mental effort done to acheive a certain result. ' ,
+    'ebe' : 'place/location >> A specific area, position or point in space. ' ,
+    'okike' : 'creation/nature >> The proccess or act of bringing something to existence; also refers to the natural world.' ,
+    'uwa' : 'world >> The Earth, along with all its inhabitants or the universe as a whole.' ,
+    'aku' : 'wealth / riches >> Abundance of valuables, possessions, money or resources.'
 
+
+}
 
 
 
@@ -49,11 +74,17 @@ def search_words(dictionary,entry_field):
     messagebox.showinfo("Search Result" , f"{word.capitalize()} : {meaning}")
     
 
+def open_igbo_dictionary():
+    # Dickson Igbo code
+    dict_window = tk.Toplevel(root)
+    dict_window.title("Igbo dictionary")
 
+    tk.Label(dict_window, text="Search Igbo Dictionary").pack(pady=5)
+    entry_field=tk.Entry(dict_window, width=30) 
+    entry_field.pack(pady=5)
 
-
-
-
+    search_button = tk.Button(dict_window, text="Search", width=30, command=lambda: search_words(Igbo_dict, entry_field))
+    search_button.pack(pady=5)
 
 
 def open_igala_dictionary():
@@ -85,6 +116,7 @@ label.pack(pady=5)
 # Add buttons for each language
 languages = {
     "Igala Language": open_igala_dictionary,
+    "Igbo Language" : open_igbo_dictionary, 
 }
 
 for language, command in languages.items():
