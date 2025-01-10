@@ -28,10 +28,6 @@ Igbo_dict ={
 
 }
 
-
-
-
-
 Igala_dict = {
     'enu' : 'mouth >> The part of the body used for speaking,eating,drinking and breathing.' ,
     'ebole' : 'food >> Substance consumed to provide nutritional support to the body.' ,
@@ -59,7 +55,32 @@ Igala_dict = {
 
 }
 
+tiv_dict = {
+    'Ter' : 'Father :a male elder or a respected man. ' ,
+    'Mumya' : 'Mother :to a woman in a nurturing or caregiving role.' ,
+    'Amaa' : 'Elder sibling :gender-neutral term that refers to an older brother or sister.' ,
+    'Mba' : 'Child :ones offspring.' ,
+    'Vaa' : 'Come :the action of moving or traveling toward or reaching a specific place or person. ' ,
+    'Mba' : 'Eat : consuming food by taking it into the mouth.' ,
+    'Ityo' : 'Thank you : an expression of gratitude or appreciation to someone. ' ,
+    'Mzugh u sha' : 'Good morning :typically used in the early part of the day.' ,
+    'Mbakange' : 'Food :any substance that is consumed by living organisms to provide nutritional support, energy, and maintain bodily functions.' ,
+    'Amande' : 'Clothes : items worn to cover, protect, and adorn the body.' ,
+    'Ityo' : 'Day :refers to the 24-hour period, from sunrise to sunset, or generally to daylight hours.' ,
+    'Ikyô' : 'Heart : the muscular organ in the body that pumps blood through the circulatory system.' ,
+    'Ita' : 'House :a building or structure that serves as a dwelling for people.' ,
+    'Ityo' : 'Amen :an expression used to affirm or conclude a prayer, meaning "so be it" or "let it be' ,
+    'Mzungu sha' : 'Good evening :greeting used in the evening, typically after the afternoon and before nightfall, to wish someone well during that time of day.' ,
+    'Aondona' : 'Friend : refers to a person with whom one has a close, trusting, and supportive relationship.' ,
+    'Mumya' : 'Wife :a woman who is married to a man, typically within the context of a legal or religious union.' ,
+    'Mzugh sha' : 'Good  afternoon :a greeting used in the afternoon, typically between midday and evening, to wish someone well during that time of day.' ,
+    'Ikyôr' : 'Month :refers to one of the twelve periods into which a year is divided, typically based on the cycles of the moon.' ,
+    'Kwagh' : 'speak : To say words.' ,
+    'Atyô' : 'bad : Something harmful or unpleasant. ' ,
+    'Tyo' : 'beautiful : Something pleasant to look at.'
 
+  
+}
 
 
 
@@ -99,8 +120,17 @@ def open_igala_dictionary():
    search_button = tk.Button(dict_window, text="Search" ,width=30, command=lambda: search_words(Igala_dict, entry_field) )
    search_button.pack(pady=5)
 
+def open_tiv_dictionary():
+    # David Tiv code
+    dict_window = tk.Toplevel(root)
+    dict_window.title("Tiv Dictionary")
+    
+    tk.Label(dict_window, text="Search Igala Dictionary").pack(pady=5)
+    entry_field=tk.Entry(dict_window, width=30 )
+    entry_field.pack(pady=5)
 
-
+    search_button = tk.Button(dict_window, text="Search" ,width=30, command=lambda: search_words(Igala_dict, entry_field) )
+    search_button.pack(pady=5)
 
 
 
@@ -116,7 +146,8 @@ label.pack(pady=5)
 # Add buttons for each language
 languages = {
     "Igala Language": open_igala_dictionary,
-    "Igbo Language" : open_igbo_dictionary, 
+    "Igbo Language" : open_igbo_dictionary,
+    "Tiv Language" : open_tiv_dictionary,
 }
 
 for language, command in languages.items():
