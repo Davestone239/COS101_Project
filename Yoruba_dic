@@ -1,0 +1,52 @@
+from tkinter import Entry, StringVar, Button, Tk
+from tkinter.ttk import Label
+
+window = Tk()
+window.geometry("600*250")
+window.title('Yoruba Dictionary')
+
+entry_text = Entry(window)
+entry_text.pack()
+
+result = StringVar()
+result_label = Label(window, textvariable=result)
+result_label.pack()
+
+Yoruba_dict = {
+    'ibi': 'place',
+    'owo': 'money',
+    'omo': 'child',
+    'jeun': 'eat',
+    'mun': 'drink it',
+    'ba': 'meet him',
+    'fa': 'pull it',
+    'fun': 'give it',
+    'sun': 'sleep',
+    'ose': 'thank you',
+    'rin': 'walk',
+    'ri': 'see',
+    'aiye': 'world',
+    'ekun': 'tears',
+    'ata': 'pepper',
+    'aaye': 'life',
+    'aile': 'evening',
+    'gba': 'take',
+    'gbe': 'to lift',
+    'ole': 'thief'
+}
+
+
+def search(word):
+    if word in Yoruba_dict:
+        result.set(Yoruba_dict[word])
+        print(Yoruba_dict[word])
+
+    else:
+        result.set('Not Found')
+
+
+search_btn = Button(window, text='Search', command=lambda: search(entry_text.get()))
+search_btn.pack()
+
+# run the application
+window.mainloop
