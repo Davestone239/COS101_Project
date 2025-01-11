@@ -216,7 +216,8 @@ languages = {
     "Igala Language": open_igala_dictionary,
     "Igbo Language" : open_igbo_dictionary,
     "Tiv Language" : open_tiv_dictionary,
-    "Yoruba Language" : open_yoruba_dic,
+    "Yoruba Language" : open_yoruba_dictionary,
+    "Hausa Language" : open_hausa_dictionary,
 }
 
 for language, command in languages.items():
