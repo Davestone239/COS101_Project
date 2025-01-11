@@ -55,7 +55,7 @@ Igala_dict = {
 
 }
 
-tiv_dict = {
+Tiv_dict = {
     'Ter' : 'Father :a male elder or a respected man. ' ,
     'Mumya' : 'Mother :to a woman in a nurturing or caregiving role.' ,
     'Amaa' : 'Elder sibling :gender-neutral term that refers to an older brother or sister.' ,
@@ -82,30 +82,53 @@ tiv_dict = {
   
 }
 
-
-
 Yoruba_dict = {
-    'ibi': 'place',
-    'owo': 'money',
-    'omo': 'child',
-    'jeun': 'eat',
-    'mun': 'drink it',
-    'ba': 'meet him',
-    'fa': 'pull it',
-    'fun': 'give it',
-    'sun': 'sleep',
-    'ose': 'thank you',
-    'rin': 'walk',
-    'ri': 'see',
-    'aiye': 'world',
-    'ekun': 'tears',
-    'ata': 'pepper',
-    'aaye': 'life',
-    'aile': 'evening',
-    'gba': 'take',
-    'gbe': 'to lift',
-    'ole': 'thief'
+    'ibi' : 'place>> A specific area, position or point in space. ',
+    'owo' : 'money >> A medium of exchange in form of coins, banknotes, or digital currency. ',
+    'omo' : 'child  Ones offspring .',
+    'jeun' : 'eat >> Consuming food by taking it into the mouth.',
+    'mun' : 'drink it. ',
+    'ba' : 'meet him. ',
+    'fa' : 'pull it. ',
+    'fun' : 'give it',
+    'sun' : 'sleep >> An act of rest with the eyes closed to recuperate the body system',
+    'ose' : 'thank you >> An expression of gratitude or appreciation to someone. ',
+    'rin' : 'walk >> A locomotive form of motion which involves the use of the legs to change location on the earths surface. ',
+    'ri' : 'see >> The gift of sight, the ability to recognize objects using the eye in humans and some animals. ',
+    'aiye' : 'world >> The Earth, along with all its inhabitants or the universe as a whole.',
+    'ekun' : 'tears >> A liquid that comes out of the eye due to intence emotion; positive or negative emotion. ',
+    'ata' : 'pepper >> A vegetable item commoly used in the preparation of meals. ',
+    'aaye' : 'life >> The state of being alive or in existence. ',
+    'aile' : 'evening >> The later part of the day. ',
+    'gba' : 'take >> To receive an object, idea or motive from a source. ',
+    'gbe' : 'to lift .',
+    'ole' : 'thief >> An individual known for the criminal act of stealing. '
 }
+
+
+Hausa_dict = {
+    'zo': 'Come >> To move towards a person, place or point in space.',
+    'kia': 'Head >> The upper part of the bodyin humans or animals, containing the brain, eye, ears, and mouth.',
+    'je': 'Go >> To move or travel to a specific destination',
+    'sannu': 'Hello >> A common greeting used to acknowledge the presence of a person.',
+    'kudi': 'Money >> A medium of exchange in form of coins, banknotes, or digital currency. ',
+    'na gode': 'Thank you >> An expression of gratitude.',
+    'gobe': 'Tomorrow >> The dat following the current day.',
+    'babba': 'Big >> Of considerable size, extent , or importance.',
+    'yau': 'Today >> The present day or the day occuring now.',
+    'dare': 'Night >> The time of day when it is dark, typically between sunset ad sunrise.',
+    'dogon yaro': 'neem tree >> A tropical tree known for its medicinal properties and bitter-tasting leaves.',
+    'rakee': 'Sugar cane >> A tall green plant with thick, juicy stalk used to produce sugar',
+    'ruwa': 'Water >> A transparent, tasteless liquid essential for all forms of life, covering most of the earths surface.',
+    'dadi': 'delicious >> Having a pleasant taste or flavor.',
+    'dauka': 'take >> To grasp, carry,or move something.',
+    'kyau': 'beautiful >> Pleasing to the senses or mind, esspecially in appearance',
+    'uwa': 'mum >> A mother; the female parent of a child',
+    'baba': 'dad >> A father; the male parent of a child.',
+    'rubutu': 'text >> written or printed words that communicate information.'
+}
+
+
 
 
 def search_words(dictionary,entry_field):
@@ -154,6 +177,29 @@ def open_tiv_dictionary():
     search_button = tk.Button(dict_window, text="Search" ,width=30, command=lambda: search_words(Igala_dict, entry_field) )
     search_button.pack(pady=5)
 
+def open_yoruba_dictionary():
+    # Toby yorba code
+    dict_window = tk.Toplevel(root)
+    dict_window.title("Yoruba Dictionary")
+
+    tk.Label(dict_window, text="Search Yoruba Dictionary").pack(pady=5)
+    entry_field=tk.Entry(dict_window, width=30)
+    entry_field.pack(pady=5)
+
+    search_button = tk.Button(dict_window, text="Search", width=30, command=lambda: search_words(Yoruba_dict, entry_field))
+    search_button.pack(pady=5)
+
+def open_hausa_dictionary():
+    # Daniel Hausa code
+    dict_window = tk.Toplevel(root)
+    dict_window.title("Hausa Dictionary")
+
+    tk.Label(dict_window, text="Search Hausa Dictionary").pack(pady=5)
+    entry_field=tk.Entry(dict_window, width=30)
+    entry_field.pack(pady=5)
+
+    search_button = tk.Button(dict_window, text="Search", width=30, command=lambda: search_words(Hausa_dict, entry_field))
+    search_button.pack(pady=5)
 
 
 # Create the main window
