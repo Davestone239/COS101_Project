@@ -84,6 +84,28 @@ tiv_dict = {
 
 
 
+Yoruba_dict = {
+    'ibi': 'place',
+    'owo': 'money',
+    'omo': 'child',
+    'jeun': 'eat',
+    'mun': 'drink it',
+    'ba': 'meet him',
+    'fa': 'pull it',
+    'fun': 'give it',
+    'sun': 'sleep',
+    'ose': 'thank you',
+    'rin': 'walk',
+    'ri': 'see',
+    'aiye': 'world',
+    'ekun': 'tears',
+    'ata': 'pepper',
+    'aaye': 'life',
+    'aile': 'evening',
+    'gba': 'take',
+    'gbe': 'to lift',
+    'ole': 'thief'
+}
 
 
 def search_words(dictionary,entry_field):
@@ -148,6 +170,7 @@ languages = {
     "Igala Language": open_igala_dictionary,
     "Igbo Language" : open_igbo_dictionary,
     "Tiv Language" : open_tiv_dictionary,
+    "Yoruba Language" : open_yoruba_dic,
 }
 
 for language, command in languages.items():
